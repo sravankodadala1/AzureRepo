@@ -8,6 +8,8 @@
 from pyspark.sql.types import *
 from pyspark.sql.functions import *
 
+mounting_layer_json('wasbs://sales-view-devtst@assignmentstorage123.blob.core.windows.net/','/mnt/assign','fs.azure.account.key.assignmentstorage123.blob.core.windows.net','Xz7l6ojalGseTfOfIumjDEV8+FY79pfELzy2Os1lClb92AcYEcywJzDTVS2he7xQYih3hzqhxw8w+ASti0Lf5Q==')
+
 options={'header':'true','delimiter':',','inferSchema':'True'}
 # Reading the CSV file into a DataFrame using the specified options
 df_customer=read("csv", "dbfs:/mnt/assign/Bronze/sales_view/customer/20240107_sales_customer.csv", options )
